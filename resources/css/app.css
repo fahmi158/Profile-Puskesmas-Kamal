@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Brand palette - healthcare institutional (green + blue + white) */
+    --color-brand-50: #eff8f2;
+    --color-brand-100: #d7edde;
+    --color-brand-200: #b0dbc0;
+    --color-brand-300: #7fc29c;
+    --color-brand-400: #4fa578;
+    --color-brand-500: #2f8a5b;
+    --color-brand-600: #216e47;
+    --color-brand-700: #1b5739;
+    --color-brand-800: #16452e;
+    --color-brand-900: #123a27;
+    --color-brand-950: #082115;
+
+    --color-ocean-50: #eff6fc;
+    --color-ocean-100: #d8e9f7;
+    --color-ocean-200: #b7d5ef;
+    --color-ocean-300: #88b9e3;
+    --color-ocean-400: #5296d2;
+    --color-ocean-500: #2f78bd;
+    --color-ocean-600: #215f9f;
+    --color-ocean-700: #1c4c81;
+    --color-ocean-800: #1b416b;
+    --color-ocean-900: #1a385a;
+    --color-ocean-950: #10243c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* Accessible focus states */
+:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+}
+
+/* Rich text content defaults */
+.prose-health {
+    --tw-prose-body: #374151;
+    --tw-prose-headings: #123a27;
+    --tw-prose-links: #216e47;
+}
