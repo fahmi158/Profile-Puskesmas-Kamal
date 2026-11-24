@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Albums\Schemas;
 
+use App\Filament\Forms\Components\WebpFileUpload;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -49,7 +49,7 @@ class AlbumForm
                             ->label('Deskripsi')
                             ->rows(3)
                             ->columnSpanFull(),
-                        FileUpload::make('cover_image')
+                        WebpFileUpload::make('cover_image')
                             ->label('Gambar Sampul')
                             ->image()
                             ->directory('albums')
@@ -66,7 +66,7 @@ class AlbumForm
                             ->defaultItems(0)
                             ->addActionLabel('Tambah Foto')
                             ->schema([
-                                FileUpload::make('image')
+                                WebpFileUpload::make('image')
                                     ->label('Foto')
                                     ->image()
                                     ->required()

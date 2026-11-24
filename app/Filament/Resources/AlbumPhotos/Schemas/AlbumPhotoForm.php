@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\AlbumPhotos\Schemas;
 
-use Filament\Forms\Components\FileUpload;
+use App\Filament\Forms\Components\WebpFileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
@@ -30,7 +30,7 @@ class AlbumPhotoForm
                             ->label('Urutan')
                             ->numeric()
                             ->default(0),
-                        FileUpload::make('image')
+                        WebpFileUpload::make('image')
                             ->label('Foto')
                             ->image()
                             ->required()

@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Album;
+use App\Models\Announcement;
 use App\Models\Document;
 use App\Models\Event;
 use App\Models\News;
@@ -19,6 +20,22 @@ class PublicPagesTest extends TestCase
     public function test_home_page_loads(): void
     {
         $this->get('/')->assertOk();
+    }
+
+    public function test_home_page_announcement_links_to_contact_page(): void
+    {
+        Announcement::factory()->create([
+            'title' => 'Layanan Informasi dan Pengaduan via WhatsApp',
+            'status' => 'published',
+            'is_active' => true,
+            'starts_at' => now()->subDay(),
+            'ends_at' => now()->addDay(),
+        ]);
+
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('Lihat Selengkapnya')
+            ->assertSee(route('contact.index'), false);
     }
 
     public function test_static_pages_load(): void

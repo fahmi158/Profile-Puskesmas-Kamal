@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources\Events\Schemas;
 
+use App\Filament\Forms\Components\WebpFileUpload;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -55,7 +55,7 @@ class EventForm
                 Section::make('Publikasi')
                     ->columns(2)
                     ->schema([
-                        FileUpload::make('featured_image')
+                        WebpFileUpload::make('featured_image')
                             ->label('Gambar Utama')
                             ->image()
                             ->directory('events')

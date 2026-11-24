@@ -48,19 +48,19 @@
 
     {{-- INFORMASI PENTING --}}
     @if ($announcements->isNotEmpty())
-        <section class="mx-auto -mt-6 max-w-7xl px-4 sm:px-6 lg:px-8" aria-labelledby="pengumuman-heading">
+        <section class="mx-auto max-w-7xl px-4 pt-10 sm:px-6 sm:pt-12 lg:px-8" aria-labelledby="pengumuman-heading">
             <div class="rounded-2xl border border-amber-200 bg-amber-50 p-5 shadow-sm sm:p-6">
-                <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
                     <div class="flex items-start gap-3">
                         <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
                             <x-heroicon-o-megaphone class="h-5 w-5" />
                         </span>
-                        <div>
+                        <div class="min-w-0">
                             <h2 id="pengumuman-heading" class="text-xs font-bold uppercase tracking-wider text-amber-700">Informasi Penting</h2>
-                            <p class="mt-1 text-sm font-semibold text-slate-800">{{ $announcements->first()->title }}</p>
+                            <p class="mt-1 text-sm font-semibold leading-relaxed text-slate-800">{{ $announcements->first()->title }}</p>
                         </div>
                     </div>
-                    <a href="#" class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-amber-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-amber-700">
+                    <a href="{{ route('contact.index') }}" class="inline-flex shrink-0 items-center justify-center gap-1.5 self-start rounded-full bg-amber-600 px-5 py-2.5 text-xs font-semibold text-white transition hover:bg-amber-700 sm:self-auto">
                         Lihat Selengkapnya
                         <x-heroicon-m-arrow-right class="h-4 w-4" />
                     </a>

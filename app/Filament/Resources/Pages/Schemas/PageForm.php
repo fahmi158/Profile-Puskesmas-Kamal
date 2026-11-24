@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Pages\Schemas;
 
-use Filament\Forms\Components\FileUpload;
+use App\Filament\Forms\Components\WebpFileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -39,7 +39,7 @@ class PageForm
                         RichEditor::make('content')
                             ->label('Isi Halaman')
                             ->columnSpanFull(),
-                        FileUpload::make('thumbnail')
+                        WebpFileUpload::make('thumbnail')
                             ->label('Thumbnail')
                             ->image()
                             ->directory('pages')
